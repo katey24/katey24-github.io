@@ -10,10 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-/**
- * @version 1.33 2007-06-12
- * @author Cay Horstmann
- */
 public class Calculator
 {
    public static void main(String[] args)
@@ -30,9 +26,6 @@ public class Calculator
    }
 }
 
-/**
- * A frame with a calculator panel.
- */
 class CalculatorFrame extends JFrame
 {
    public CalculatorFrame()
@@ -44,9 +37,6 @@ class CalculatorFrame extends JFrame
    }
 }
 
-/**
- * A panel with calculator buttons and a result display.
- */
 class CalculatorPanel extends JPanel
 {
    public CalculatorPanel()
@@ -57,7 +47,7 @@ class CalculatorPanel extends JPanel
       lastCommand = "=";
       start = true;
 
-      // add the display
+      // adding the display
 
       display = new JButton("0");
       display.setEnabled(false);
@@ -66,7 +56,7 @@ class CalculatorPanel extends JPanel
       ActionListener insert = new InsertAction();
       ActionListener command = new CommandAction();
 
-      // add the buttons in a 4 x 4 grid
+      // adding the buttons in a 4 x 4 grid
 
       panel = new JPanel();
       panel.setLayout(new GridLayout(4, 4));
@@ -94,11 +84,6 @@ class CalculatorPanel extends JPanel
       add(panel, BorderLayout.CENTER);
    }
 
-   /**
-    * Adds a button to the center panel.
-    * @param label the button label
-    * @param listener the button listener
-    */
    private void addButton(String label, ActionListener listener)
    {
       JButton button = new JButton(label);
@@ -106,9 +91,6 @@ class CalculatorPanel extends JPanel
       panel.add(button);
    }
 
-   /**
-    * This action inserts the button action string to the end of the display text.
-    */
    private class InsertAction implements ActionListener
    {
       public void actionPerformed(ActionEvent event)
@@ -123,9 +105,7 @@ class CalculatorPanel extends JPanel
       }
    }
 
-   /**
-    * This action executes the command that the button action string denotes.
-    */
+  
    private class CommandAction implements ActionListener
    {
       public void actionPerformed(ActionEvent event)
@@ -150,10 +130,7 @@ class CalculatorPanel extends JPanel
       }
    }
 
-   /**
-    * Carries out the pending calculation.
-    * @param x the value to be accumulated with the prior result.
-    */
+ 
    public void calculate(double x)
    {
       if (lastCommand.equals("+")) result += x;
