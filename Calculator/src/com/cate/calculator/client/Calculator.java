@@ -73,7 +73,7 @@ column = 0 ;
 }
 }
 
-// Manually add the symbols (operators) and clear sets
+// Manually add the symbols or operators and clear sets
 clearsTable . setWidget( 0 , 0, new Button(clears[ 0 ], new ClickListener() {
 public void onClick (Widget sender) {
 addToDisplay(clears[ 0 ]);
@@ -119,7 +119,7 @@ displayArea . setWidth(COMMON_WIDTH );
 header. setText( H_TEXT );
 header. setWidth( COMMON_WIDTH );
 
-// Construct the mainPanel in order (top to bottom)
+// Construct the mainPanel from top to bottom
 mainPanel . add(header);
 mainPanel . add(displayArea);
 mainPanel . add(clearsTable);
@@ -138,12 +138,12 @@ origText = displayArea . getText();
 if (ArrayContains(syms, addText)) {
 if (addText == "=" ) {
 
-// figure it out and clear the past
+// clears tests
 eqParts .add(origText);
 FigureItOut();
 eqParts .clear();
 return;
-} else // anything else
+} else 
 {
 
 // add to array
@@ -236,7 +236,7 @@ firstNum = answer;
 nextNum = null;
 operator = null;
 } else {
-Window. alert( "Something unexpected happened. Try again." );
+Window. alert( "Something is wrong. Try again." );
 }
 }
 }
